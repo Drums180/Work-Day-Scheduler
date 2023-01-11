@@ -20,4 +20,27 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+  var today = dayjs();
+  var ordinal;
+  var hours = today.format("H");
+
+  //ADD-UP
+  //Function to determine ordinal termination of the number
+  function determineOrdinal(){
+    if (today.format("D") == 1) {
+      ordinal = "st";
+    } else if (today.format("D") == 2) {
+      ordinal = "nd";
+    } else if (today.format("D") == 3) {
+      ordinal = "rd";
+    } else {
+      ordinal = "th";
+    }
+  }
+  determineOrdinal()
+
+  console.log(hours + " is the actual hour") //Checking for bugs
+  console.log(ordinal + " is the ordinal termination of the day number") //Checking for bugs
+
+  $('#currentDay').text(today.format('dddd, MMMM D')+ ordinal);
 });
