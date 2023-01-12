@@ -1,7 +1,8 @@
 # Work-Day-Scheduler
 ## Criteria 1: Current Date
+The first criteria that is asked to improve the performance of the work day planner is the current date. To achieve this, it is necessary to use an external API that sees this information through JavaScript and so that it can use the jQuery API (or using vanilla JavaScript is also possible) to insert this text directly into the HTML.
 
-
+The API used is the same as seen during the course, that is, Day.js which, through the `dayjs()` function, gives us today's date. In addition to this, a function is used within JavaScript to determine the ordinal ending of the number, however, this will be discussed later.
 
 ![currentDate](https://user-images.githubusercontent.com/118247139/211972502-b61e6af3-a34d-4418-bac3-993b35956395.png)
 > ###### Note: The use of different console.log() over the function are mainly use with the purpouse of following the track of what the user wants and what it doesn´t for its password.
