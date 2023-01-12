@@ -43,13 +43,21 @@ function changeStyle() {
 ![Captura de pantalla 2023-01-11 a la(s) 21 52 24](https://user-images.githubusercontent.com/118247139/211971785-e4e1c728-e51b-4a10-a2fa-ff0ab585181c.png)
 
 ## Criteria 3: Save schedule in Local Storage
+Finally, the last criterion seeks to save in the LocalStorage the information of the corresponding activity entered by the user triggered when the button with the save sign is pressed.
 
+For this, a simple function is used where, through jQuery, the DOM is accessed and the corresponding block is located through the tree diagram, mostly known as traversing through the child.
+
+jQuery's closest command allows you to identify which button within which block was pressed and thus pass the value to LocalStorage using the block id. In this way, when saving it in the LocalStorage, it can be identified to which block it belongs.
+
+For this, another function is used, not to show below, but which can be found in the JavaScript file of the repertoire in the /assets folder, where to display the information in LocalStorage, a for loop is used for each block, having the id as a reference.
 ![saveLocalStorage](https://user-images.githubusercontent.com/118247139/211972301-fff9a7ff-eba3-4822-95e6-c5c9e2cc3d43.png)
 ![Captura de pantalla 2023-01-11 a la(s) 21 53 24](https://user-images.githubusercontent.com/118247139/211971928-4a5dbdd0-bba2-424e-8b8c-c0d18364f3de.png)
 
 
 ## Add Ups
+This add-up was mentioned earlier and is related to a JavaScript function that allows you to identify the ordinal ending and add it as a string to the Current Date text. Even though the Dayjs documentation shows the use of a plug-in called “Advanced Formats” to be able to use this notation you need to make your own function, it was impossible for me to introduce this plug-in in the code so I decided to do it myself.
 
+Since the only different endings are those of the first three numbers, the function identifies if the current day corresponds to any of these first three and if the ending th is not used, it is universal for all numbers other than 1, 2 or 3.
 
 
 ```
