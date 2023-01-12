@@ -35,6 +35,7 @@ $(function () {
   // useful when saving the description in local storage?
 
   //Save shcedule text input
+
   $(document).on("click", ".saveBtn", function(){
     console.log ("saved") //Checking for bugs
     var container = $(this).closest(".time-block");
@@ -91,4 +92,17 @@ $(function () {
   }
   }
   changeStyle()
+
+  //ADD-UP
+  function clearLS() {
+    var divs = $(".time-block");
+    for (var i = 0; i < divs.length; i++) {
+      var containerId = divs[i].id;
+      localStorage.removeItem(containerId);
+      var container = divs[i];
+      $(container).children(".description").val("")
+    }
+  }
+
+  $(".clearBtn").on("click",clearLS)
 });
