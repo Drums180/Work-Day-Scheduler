@@ -18,7 +18,7 @@ function changeStyle() {
       console.log(actualHour) //Checking for bugs
       $("#hour-" + hourOfBlock).removeClass("past");
       $("#hour-" + hourOfBlock).removeClass("present");
-      $("#hour-![saveLocalStorage](https://user-" + hourOfBlock).removeClass("future");
+      $("#hour-" + hourOfBlock).removeClass("future");
 
       if (hourOfBlock < actualHour) {
         $("#hour-" + hourOfBlock).addClass("past");
@@ -38,7 +38,7 @@ function changeStyle() {
 
 ## Criteria 3: Save schedule in Local Storage
 
-images.githubusercontent.com/118247139/211972301-fff9a7ff-eba3-4822-95e6-c5c9e2cc3d43.png)
+![saveLocalStorage](https://user-images.githubusercontent.com/118247139/211972301-fff9a7ff-eba3-4822-95e6-c5c9e2cc3d43.png)
 ![Captura de pantalla 2023-01-11 a la(s) 21 53 24](https://user-images.githubusercontent.com/118247139/211971928-4a5dbdd0-bba2-424e-8b8c-c0d18364f3de.png)
 
 
