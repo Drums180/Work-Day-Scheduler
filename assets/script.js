@@ -5,7 +5,7 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
   var today = dayjs();
   var ordinal;
-  var actualHour = today.format("H");
+  var actualHour = parseInt(today.format("H"));
 
   //ADD-UP
   //Function to determine ordinal termination of the number
@@ -71,16 +71,22 @@ $(function () {
     var divs = $(".time-block");
     for (var i = 0; i < divs.length; i++) {
       var idOfBlock = divs[i].id;
-      var hourOfBlock = parseInt(idOfBlock.substring(idOfBlock.length-2));
+      var hourOfBlock = idOfBlock.substring(idOfBlock.length-2);
       console.log(hourOfBlock) //Checking for bugs
       console.log(actualHour) //Checking for bugs
+      $("#hour-" + hourOfBlock).removeClass("past");
+      $("#hour-" + hourOfBlock).removeClass("present");
+      $("#hour-" + hourOfBlock).removeClass("future");
 
       if (hourOfBlock < actualHour) {
         $("#hour-" + hourOfBlock).addClass("past");
-      } else if (hourOfBlock = actualHour) {
+        console.log("past")
+      } else if (hourOfBlock == actualHour) {
         $("#hour-" + hourOfBlock).addClass("present");
-      } else {
+        console.log("present")
+      } else if (hourOfBlock > actualHour) {
         $("#hour-" + hourOfBlock).addClass("future");
+        console.log("future")
       }
   }
   }
