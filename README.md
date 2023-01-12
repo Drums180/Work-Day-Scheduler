@@ -59,7 +59,6 @@ This add-up was mentioned earlier and is related to a JavaScript function that a
 
 Since the only different endings are those of the first three numbers, the function identifies if the current day corresponds to any of these first three and if the ending th is not used, it is universal for all numbers other than 1, 2 or 3.
 
-
 ```
 function determineOrdinal(){
     if (today.format("D") == 1) {
@@ -74,5 +73,26 @@ function determineOrdinal(){
   }
   determineOrdinal();
 ```
+
+Another add-up is the clear button to reset the values in the LocalStorage as well as delete the values directly in the inputs.
+
+Firstly the button was created in Html using a default bootstrap configuration, while giving it a custom margin using direct css.
+
+For its functionality, jQuery was used to select the button, add an EventListener on click to activate the function presented below.
+
+This function uses a for loop to reset each of the values in the LocalStorage in addition to removing the current value in the time blocks. The syntax is very similar to other functions since a combination of several previously used techniques was used, such as selecting the blocks using `divs` and then using the `i` to access each one individually, as well as using the id of these, the corresponding LocalStorage section was directly accessed and the value was eliminated if there was one previously existing.
+
+![html_clear](https://user-images.githubusercontent.com/118247139/212109056-102560ce-92ef-482d-a0c0-1b25a7752d3d.png)
+```
+function clearLS() {
+    var divs = $(".time-block");
+    for (var i = 0; i < divs.length; i++) {
+      var containerId = divs[i].id;
+      localStorage.removeItem(containerId);
+      var container = divs[i];
+      $(container).children(".description").val("")
+    }
+  }
+  ```
 
 > Visualize the final page [here](https://drums180.github.io/Work-Day-Scheduler/)
