@@ -8,6 +8,11 @@ The API used is the same as seen during the course, that is, Day.js which, throu
 > ###### Note: The use of different console.log() over the function are mainly use with the purpouse of following the track of what the user wants and what it doesn´t for its password.
 
 ## Criteria 2: Color code for past, present and future
+The second criterion is the change of background color according to the schedule. For this we continue to use the Day.js API to now get the current time by using the `format(“H”)` command and adding this to the `today` variable previously set to today, this allows the API to access to the current time and pass it to JavaScript.
+
+Once this is done, it is necessary to obtain the time corresponding to the various time blocks, for this the id of each one is used since they contain the corresponding time at the end. In order to obtain them, the substring command is used, which allows taking the first or last characters of a string and, in this case, adding them to a new variable.
+
+With this, a for loop is used together with a function that compares the hours of each block of time with the current time and depending on the result, an already established class is assigned that will format the block. In order for it to be constantly updated and there is no error when the classes accumulate, all the corresponding classes (if there are any) are eliminated before starting the function to determine the class to add.
 
 ```
 function changeStyle() {
